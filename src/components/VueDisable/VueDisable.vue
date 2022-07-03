@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import DisabledParent from '../mixins/DisabledParent'
-import DisabledChild from '../mixins/DisabledChild'
+import DisabledParent from '../../mixins/DisabledParent'
+import DisabledChild from '../../mixins/DisabledChild'
 
 export default {
   name: 'VueDisable',
@@ -41,3 +41,4 @@ export default {
   },
 }
 </script>
+

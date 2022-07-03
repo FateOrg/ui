@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import "../style/imports"
+@import "../../style/imports"
 .vue-ui-dropdown-content .vue-ui-dropdown-button.vue-ui-button
   border-radius 0
   button-transitions()

@@ -1,0 +1,5 @@
+declare const demo: {
+    [x: string | symbol | number]: any;
+};
+
+export default demo;

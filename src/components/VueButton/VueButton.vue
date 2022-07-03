@@ -20,7 +20,7 @@
   >
     <VueLoadingIndicator
       v-if="loading"
-    />
+    ></VueLoadingIndicator>
 
     <span
       class="content"
@@ -28,12 +28,12 @@
       <VueLoadingIndicator
         v-if="loadingSecondary"
         class="inline small loading-secondary"
-      />
+      ></VueLoadingIndicator>
       <VueIcon
         v-else-if="iconLeft"
         :icon="iconLeft"
         class="button-icon left"
-      />
+      ></VueIcon>
 
       <span class="default-slot">
         <slot>
@@ -49,94 +49,19 @@
         v-if="iconRight"
         :icon="iconRight"
         class="button-icon right"
-      />
+      ></VueIcon>
     </span>
   </component>
 </template>
 
-<script>
-import DisabledChild from '../mixins/DisabledChild'
-
-export default {
-  name: 'VueButton',
-
-  inheritAttrs: false,
-
-  mixins: [
-    DisabledChild,
-  ],
-
-  props: {
-    iconLeft: {
-      type: String,
-      default: null,
-    },
-
-    iconRight: {
-      type: String,
-      default: null,
-    },
-
-    label: {
-      type: String,
-      default: null,
-    },
-
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-
-    loadingSecondary: {
-      type: Boolean,
-      default: false,
-    },
-
-    type: {
-      type: String,
-      default: 'button',
-    },
-
-    tag: {
-      type: [Number, String],
-      default: null,
-    },
-  },
-  computed: {
-    component () {
-      if (this.$attrs.to) {
-        return 'router-link'
-      } else if (this.$attrs.href) {
-        return 'a'
-      } else {
-        return 'button'
-      }
-    },
-
-    ghost () {
-      return this.finalDisabled || this.loading || this.loadingSecondary
-    },
-  },
-
-  methods: {
-    handleClick (event) {
-      if (this.ghost) {
-        event.preventDefault()
-        event.stopPropagation()
-        event.stopImmediatePropagation()
-      } else {
-        this.$emit('click', event)
-      }
-    },
-  },
-}
+<script lang="ts" src="./button.ts">
 </script>
 
 <style lang="stylus">
 // Base
-@import "../style/base"
+@import "../../style/base"
 
-@import "../style/imports"
+@import "../../style/imports"
 
 $focus-color = $vue-ui-gray-800
 

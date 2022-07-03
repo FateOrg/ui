@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import DisabledChild from '../mixins/DisabledChild'
+import DisabledChild from '../../mixins/DisabledChild'
 
 export default {
   name: 'VueDropdown',
@@ -158,7 +158,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import "../style/imports"
+@import "../../style/imports"
 
 .vue-ui-dropdown
   display inline-block

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import VueDropdownButton from './VueDropdownButton.vue'
+import VueDropdownButton from './VueDropdownButton/VueDropdownButton.vue'
 
 export default {
   name: 'VueSelectButton',
